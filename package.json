@@ -4,7 +4,7 @@
   "description": "An app to help plan accessible events",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node server/server.js",
+    "start": "cross-env NODE_ENV=production nodemon server/server.js",
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "concurrently \"cross-env NODE_ENV=development nodemon server/server.js\" \"cross-env NODE_ENV=development webpack serve --open\"",
     "test": "echo \"Error: no test specified\" && exit 1"
