@@ -1,15 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const process = require('process');
 
 module.exports = {
-  entry:[path.join(__dirname, 'client', 'index.js'), path.join(__dirname, 'client', 'style.scss')],
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-    filename: 'bundle.js',
-  },
+  // entry:[path.join(__dirname, 'client', 'index.js'), path.join(__dirname, 'client', 'style.scss')],
   mode: process.env.NODE_ENV,
+  entry: {src: './client/index.js'},
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    // publicPath: '/',
+  },
   module: {
     rules: [
       {
@@ -35,13 +37,14 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Development',
-      template: path.join(__dirname, 'client', 'index.html'),
+      template: 'index.html',
     })
   ],
   devServer: {
     static: {
-      publicPath: '/',
+      publicPath: '/dist',
       directory: path.resolve(__dirname, 'dist'),
     },
+    proxy: { '/api': 'http://localhost:3000'}
   }
 }

@@ -1,8 +1,12 @@
 const express = require('express');
-const controller = require('server/controller.js');
+const controller = require('./controller.js');
 const router = express.Router();
 
 
-//code here
+//code here  
+router.get('/search', controller.getResults, (req, res) => {
+  console.log('in the router');
+  res.status(200).json(res.locals);
+});
 
 module.exports = router;
