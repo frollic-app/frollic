@@ -28,6 +28,7 @@
     "axios": "^0.25.0",
     "css-loader": "^6.5.1",
     "express": "^4.17.2",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.15",
     "react": "^17.0.2",
