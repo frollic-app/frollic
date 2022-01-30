@@ -26,11 +26,11 @@ module.exports = {
       },
       {
         test: /.(css|scss)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
-        use: ['file-loader'],
+        type: 'asset/resource',
       }
     ]
   },

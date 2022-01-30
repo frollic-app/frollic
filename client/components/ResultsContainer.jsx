@@ -10,9 +10,9 @@ const ResultsContainer = (props) => {
 
   if (!props.searchResults.length) {
     return (
-      <div id="splash">
-        <h1>Fun with frollic</h1>
-      </div>
+      <section id="splash">
+        <h1>fun with frollic</h1>
+      </section>
     )
   }
 
