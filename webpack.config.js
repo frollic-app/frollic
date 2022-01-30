@@ -37,7 +37,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Development',
-      template: 'index.html',
+      template: './client/index.html',
     })
   ],
   devServer: {
@@ -45,6 +45,6 @@ module.exports = {
       publicPath: '/dist',
       directory: path.resolve(__dirname, 'dist'),
     },
-    proxy: { '/api': 'http://localhost:3000'}
+    proxy: { '/api': 'http://localhost:3000', '/assets' : 'http://localhost:3000' }
   }
 }

@@ -2,17 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
 
-const mapStateToProps = (state) => {
-
-};
-
-const mapDispatchToProps = (dispatch) => {
-//  mockAction: () => {
-//    dispatch(actions.mockAction());
-//  }
-};
+const mapDispatchToProps = (dispatch) => ({
+  getResults: (location, radius, categories) => {
+    dispatch(actions.getResults(location, radius, categories));
+  }
+});
 
 const Sidebar = (props) => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    const location = document.querySelector('input[name="location"]').value;
+    const radius = document.querySelector('select[name="radius"]').value;
+    const checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+    const categories = [];
+    checkboxes.forEach((el) => categories.push(el.name));
+    console.log(e.target.parentElement.action);  // this should return the url string, but since I'm on liveshare, my address field only every shows localhost:8000 - should i t
+    props.getResults(location, radius, categories);
+    
+  }
+  //  onSubmit={() => {return false}}
   return (
     <aside>
       <form>
@@ -24,50 +32,60 @@ const Sidebar = (props) => {
         <div className="form-element">
         <label htmlFor="radius">Search Radius</label><br/>
         <select name="radius">
-          <option>less than 1 mile</option>
-          <option>1 mile</option>
-          <option>5 miles</option>
-          <option>10 miles</option>
-          <option>25 miles</option>
+          <option value=".5">less than 1 mile</option>
+          <option value="1">1 mile</option>
+          <option value="5">5 miles</option>
+          <option value="10">10 miles</option>
+          <option value="25">25 miles</option>
         </select><br/>
         </div>
 
         <p>What type of locations are you looking for?</p>
         <div className="checkbox">
-        <input type="checkbox" name="Bar"></input>
+        <input type="checkbox" name="galleries"></input>
+        <label htmlFor="Galleries">Art Galleries</label><br/>
+        </div>
+
+        <div className="checkbox">
+        <input type="checkbox" name="bars"></input>
         <label htmlFor="Bar">Bar</label><br/>
         </div>
         
         <div className="checkbox">
-        <input type="checkbox" name="Coffee &amp; Tea"></input>
+        <input type="checkbox" name="coffee"></input>
         <label htmlFor="Coffee &amp; Tea">Coffee &amp; Tea</label><br/>
         </div>
 
         <div className="checkbox">
-        <input type="checkbox" name="Desserts"></input>
+        <input type="checkbox" name="desserts"></input>
         <label htmlFor="Desserts">Desserts</label><br/>
         </div>
 
         <div className="checkbox">
-        <input type="checkbox" name="Restaurants"></input>
+        <input type="checkbox" name="restaurants"></input>
         <label htmlFor="Restaurants">Restaurants</label><br/>
         </div>
 
         <div className="checkbox">
-        <input type="checkbox" name="Cinema"></input>
+        <input type="checkbox" name="movietheaters"></input>
         <label htmlFor="Cinema">Cinema</label><br/>
         </div>
 
         <div className="checkbox">
-        <input type="checkbox" name="Music Venues"></input>
+        <input type="checkbox" name="musicvenues"></input>
         <label htmlFor="Music Venues">Music Venues</label><br/>
         </div>
 
-        <button id="search">Search</button>
+        <div className="checkbox">
+        <input type="checkbox" name="shopping"></input>
+        <label htmlFor="Shopping">Shopping</label><br/>
+        </div>
+
+        <button id="search" onClick={handleClick}>Search</button>
 
       </form>
     </aside>
   )
 };
 
-export default connect(null, null)(Sidebar);
+export default connect(null, mapDispatchToProps)(Sidebar);
