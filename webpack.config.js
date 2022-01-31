@@ -26,18 +26,18 @@ module.exports = {
       },
       {
         test: /.(css|scss)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
-        use: ['file-loader'],
+        type: 'asset/resource',
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Development',
-      template: 'index.html',
+      template: './client/index.html',
     })
   ],
   devServer: {
@@ -45,6 +45,6 @@ module.exports = {
       publicPath: '/dist',
       directory: path.resolve(__dirname, 'dist'),
     },
-    proxy: { '/api': 'http://localhost:3000'}
+    proxy: { '/api': 'http://localhost:3000', '/assets' : 'http://localhost:3000' }
   }
 }
