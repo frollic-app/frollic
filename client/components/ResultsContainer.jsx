@@ -32,7 +32,7 @@ const ResultsContainer = (props) => {
 
   return (
     <section id="results-container">
-      <h3>Results: </h3>
+      <h3 id="result-word">Results: </h3>
       {resultCards}
     </section>
   );
