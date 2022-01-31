@@ -7,11 +7,26 @@ $black: #2A343A;
 html, body {
   width: 100%;
   height: 100%;
-  margin: 0px;
+  margin: 0;
   overflow-x: hidden;
+  max-height:100vh;
   color: $black;
   font-family: sans-serif;
   background-color: $white;
+}
+
+h1 {
+  color: $white;
+  background-color: $black;
+  font-size: 48px;
+  text-align: center;
+  padding: 75px 50px;
+}
+
+p {
+  color: $black;
+  margin: 5px 0;
+  font-size: 16px;
 }
 
 #nav {
@@ -28,7 +43,6 @@ html, body {
   margin-left: 40px;
   width: 250px;
   height: 45px;
-  border: 1px solid $white;
 }
 
 #profile-icon {
@@ -42,7 +56,11 @@ html, body {
   z-index: auto;
 }
 
-#profile-icon:hover {
+button {
+  z-index: auto;
+}
+
+button:hover {
   cursor: pointer; 
  }
 
@@ -55,18 +73,11 @@ html, body {
 aside {
    padding: 40px;
    height: 100%;
-   border: 1px solid $gray;
- }
-
- #results-container {
-   height: 100%;
-   padding: 40px;
-   border: 1px solid $gray;
  }
 
 input[type=text]{
   width: 80%;
-  padding: 10px 20px;
+  padding: 10px 10px;
   margin: 5px 0 20px;
 }
 
@@ -80,6 +91,7 @@ input[type=checkbox]{
   width: 30px;
   height: 30px;
   vertical-align: middle;
+  margin-right: 10px;
 }
 
 .checkbox {
@@ -95,15 +107,114 @@ input[type=checkbox]{
 #search {
   background-color: $gold;
   color: $black;
+  font-weight: bold;
+  font-size: 16px;
   border: 1px solid $gold;
   border-radius: 5px;
   width: 200px;
   height: 45px;
   z-index: auto;
   box-shadow: none;
-  margin: 30px 0;
- }
+  margin: 30px 0 0;
+}
 
- #search:hover {
-   cursor: pointer;
- }
+#results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 40px;
+}
+
+#splash {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("./assets/background.gif") $gold repeat center;
+  height: 100%;
+  padding: 40px;
+}
+
+article {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 20px;
+}
+
+.business {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 2px 2px $gray;
+}
+
+.businessImg {
+  width: 200px;
+  height: 200px;
+  box-shadow: 0px 2px 2px $gray;
+  object-fit: cover;
+}
+
+.businessDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid $gray;
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  box-shadow: 0px 2px 2px $gray;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.comment {
+  background-color: $gold;
+  border: 1px solid $gold;
+  color: $black;
+  border-radius: 5px;
+  width: 125px;
+  padding: 10px;
+
+}
+
+.addFav {
+  background-color: $teal;
+  color:$white;
+  border-radius: 5px;
+  border: 1px solid $teal;
+  width: 125px;
+  padding: 10px;
+  margin: 0 0 10px;
+}
+
+.name {
+  color: $teal;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.name:hover {
+  color: $gold;
+}
+
+.distance {
+  color: $black;
+  font-size: 14px;
+}
+
+.rating {
+  color: $black;
+  margin-left: 5px;
+}
+
+.price {
+  color:$black;
+  margin-right: 5px;
+}
