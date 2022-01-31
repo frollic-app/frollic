@@ -8,7 +8,7 @@ controller.getResults = (req, res, next) => {
   const radius = Math.round((req.body.radius || 5) * 1609.34);
   const location = (req.body.location || 10109);
   const categories = (req.body.categories || []);
-
+  console.log(categories);
   axios({
     method: 'GET',
     url: 'https://api.yelp.com/v3/businesses/search',
