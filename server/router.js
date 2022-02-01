@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 //code here  
-router.get('/search', controller.getResults, (req, res) => {
+router.post('/search', controller.getResults, (req, res) => {
   console.log('in the router');
   res.status(200).json(res.locals);
 });

@@ -8,6 +8,8 @@ app.use(express.json());
 
 app.use('/api', router);
 
+app.use('/assets', express.static(path.join(__dirname, '../client/assets')));
+
 app.use((req, res) => {
     console.log('Error: page not found')
     res.status(400).send('Error: page not found');
