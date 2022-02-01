@@ -20,3 +20,21 @@ export const getResults = (location, radius, categories) => (dispatch) => {
     });
   });
 };
+
+export const addFav = (favorite) => ({
+  type: types.ADD_FAV,
+  payload: favorite,
+});
+
+export const toggleFavsPage = () => ({
+  type: types.TOGGLE_FAVS_PAGE,
+});
+
+export const addComment = (number, comment) => ({
+  type: types.ADD_COMMENT,
+  payload: { number, comment }
+});
+
+export const toggleComments = () => ({
+  type: types.TOGGLE_COMMENTS,
+});
