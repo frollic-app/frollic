@@ -49,9 +49,9 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  box-shadow:  -2px 3px 3px 2px $shadow;
-  z-index: 2;
+  // position: fixed;
+  // box-shadow:  -2px 3px 3px 2px $shadow;
+  // z-index: 2;
 }
 
 #logo {
@@ -69,9 +69,9 @@ p {
   border-radius: 50%;
   color: $white;
   background-color: $white;
-  border: 1px solid $white;
-  z-index: auto;
-  box-shadow: -.5px 1.5px 2px 2px $shadow;
+  // border: 1px solid $white;
+  // z-index: auto;
+  // box-shadow: -.5px 1.5px 2px 2px $shadow;
 }
 
 button {
@@ -94,7 +94,7 @@ a:hover  {
   height: 100%;
 }
 
-aside {
+#aside {
    position: fixed;
    margin-top: 75px;
    padding: 40px;
@@ -136,11 +136,12 @@ input[type=checkbox]{
 
 .checkbox {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  margin: 5px 0;
+  // margin: 5px 0;
 
   .checkbox label {
-    padding-left: 5px;
+    // padding-left: 5px;
     font-size: 14px;
   }
 }
