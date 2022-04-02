@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
 
 const mapDispatchToProps = (dispatch) => ({
-    toggleFavsPage: () => {
-      dispatch(actions.toggleFavsPage());
-    }
-  });
+  toggleFavsPage: () => {
+    dispatch(actions.toggleFavsPage());
+  }
+});
 
 const Navbar = (props) => {
     return (
