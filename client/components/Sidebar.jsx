@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
+import { Button, Checkbox, InputLabel, FormGroup, MenuItem, Select, TextField, Typography } from '@mui/material';
 
 const mapDispatchToProps = (dispatch) => ({
   getResults: (location, radius, categories) => {
@@ -22,73 +23,96 @@ const Sidebar = (props) => {
   //  onSubmit={() => {return false}}
   return (
     <aside>
-      <form>
-        <div className="location-and-radius">
-        <div className="form-element">
-        <label htmlFor="location" className="side-header">Your Address or Zipcode</label><br/>
-        <input type="text" name="location" placeholder="eg. 123 Main Street, New York, NY, 10036 or 90210"></input><br/>
-        </div>
-        
-        <div className="form-element">
-        <label htmlFor="radius" className="side-header">Search Radius</label><br/>
-        <select name="radius">
-          <option value=".5">less than 1 mile</option>
-          <option value="1">1 mile</option>
-          <option value="5">5 miles</option>
-          <option value="10">10 miles</option>
-          <option value="25">25 miles</option>
-        </select><br/>
-        </div>
-        </div>
+      <FormGroup>
+        <FormGroup className="location-and-radius">
+          <FormGroup className="form-element">
+            <InputLabel htmlFor="location" className="side-header">
+              Your Address or Zipcode
+            </InputLabel>
+            <br/>
+            <TextField
+              type="text"
+              name="location"
+              placeholder="eg. 123 Main Street, New York, NY, 10036 or 90210"
+            ></TextField>
+            <br/>
+          </FormGroup>
+          
+          <FormGroup className="form-element">
+            <InputLabel
+              htmlFor="radius"
+              className="side-header"
+            >Search Radius</InputLabel>
+            <br/>
+            <Select name="radius" defaultValue=".5">
+              <MenuItem value=".5">less than 1 mile</ MenuItem>
+              <MenuItem value="1" >1 mile</           MenuItem>
+              <MenuItem value="5" >5 miles</          MenuItem>
+              <MenuItem value="10">10 miles</         MenuItem>
+              <MenuItem value="25">25 miles</         MenuItem>
+            </Select>
+            <br/>
+          </FormGroup>
+        </FormGroup>
 
         <div className="filters">
-          <p className="side-header">What type of locations are you looking for?</p>
+          <InputLabel className="side-header">
+            What type of locations are you looking for?
+          </InputLabel>
+
           <div className="checkboxes">
             <div className="checkbox">
-            <input type="checkbox" name="galleries"></input>
-            <label htmlFor="Galleries">Art Galleries</label><br/>
+              <Checkbox type="checkbox" name="galleries" />
+              <InputLabel htmlFor="Galleries">Art Galleries</InputLabel>
+              <br/>
             </div>
 
             <div className="checkbox">
-            <input type="checkbox" name="bars"></input>
-            <label htmlFor="Bar">Bar</label><br/>
+              <Checkbox type="checkbox" name="bars" />
+              <InputLabel htmlFor="Bar">Bar</InputLabel>
+              <br/>
             </div>
           
             <div className="checkbox">
-            <input type="checkbox" name="coffee"></input>
-            <label htmlFor="Coffee &amp; Tea">Coffee &amp; Tea</label><br/>
+              <Checkbox type="checkbox" name="coffee" />
+              <InputLabel htmlFor="Coffee &amp; Tea">Coffee &amp; Tea</InputLabel>
+              <br/>
             </div>
           
             <div className="checkbox">
-            <input type="checkbox" name="desserts"></input>
-            <label htmlFor="Desserts">Desserts</label><br/>
+              <Checkbox type="checkbox" name="desserts" />
+              <InputLabel htmlFor="Desserts">Desserts</InputLabel>
+              <br/>
             </div>
           
             <div className="checkbox">
-            <input type="checkbox" name="restaurants"></input>
-            <label htmlFor="Restaurants">Restaurants</label><br/>
+              <Checkbox type="checkbox" name="restaurants" />
+              <InputLabel htmlFor="Restaurants">Restaurants</InputLabel>
+              <br/>
             </div>
 
             <div className="checkbox">
-            <input type="checkbox" name="movietheaters"></input>
-            <label htmlFor="Cinema">Cinema</label><br/>
+              <Checkbox type="checkbox" name="movietheaters" />
+              <InputLabel htmlFor="Cinema">Cinema</InputLabel>
+              <br/>
             </div>
 
             <div className="checkbox">
-            <input type="checkbox" name="musicvenues"></input>
-            <label htmlFor="Music Venues">Music Venues</label><br/>
+              <Checkbox type="checkbox" name="musicvenues" />
+              <InputLabel htmlFor="Music Venues">Music Venues</InputLabel>
+              <br/>
             </div>
 
             <div className="checkbox">
-            <input type="checkbox" name="shopping"></input>
-            <label htmlFor="Shopping">Shopping</label><br/>
+              <Checkbox type="checkbox" name="shopping" />
+              <InputLabel htmlFor="Shopping">Shopping</InputLabel>
+              <br/>
             </div>
-
           </div>
         </div>
-        <button id="search" onClick={handleClick}>Search</button>
+        <Button id="search" onClick={handleClick}>Search</Button>
 
-      </form>
+      </FormGroup>
     </aside>
   )
 };
