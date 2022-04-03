@@ -62,49 +62,49 @@ const Sidebar = (props) => {
           </InputLabel>
 
           <Grid className="checkboxes">
-            <FormLabel className="checkbox">
+            <FormLabel className="checkbox" sx={{display: 'flex', alignItems: 'center'}}>
               <Checkbox type="checkbox" name="galleries" />
               <InputLabel htmlFor="Galleries">Art Galleries</InputLabel>
               {/* <br/> */}
             </FormLabel>
 
-            <FormLabel className="checkbox">
+            <FormLabel className="checkbox" sx={{display: 'flex', alignItems: 'center'}}>
               <Checkbox type="checkbox" name="bars" />
               <InputLabel htmlFor="Bar">Bar</InputLabel>
               {/* <br/> */}
             </FormLabel>
           
-            <FormLabel className="checkbox">
+            <FormLabel className="checkbox" sx={{display: 'flex', alignItems: 'center'}}>
               <Checkbox type="checkbox" name="coffee" />
               <InputLabel htmlFor="Coffee &amp; Tea">Coffee &amp; Tea</InputLabel>
               {/* <br/> */}
             </FormLabel>
           
-            <FormLabel className="checkbox">
+            <FormLabel className="checkbox" sx={{display: 'flex', alignItems: 'center'}}>
               <Checkbox type="checkbox" name="desserts" />
               <InputLabel htmlFor="Desserts">Desserts</InputLabel>
               {/* <br/> */}
             </FormLabel>
           
-            <FormLabel className="checkbox">
+            <FormLabel className="checkbox" sx={{display: 'flex', alignItems: 'center'}}>
               <Checkbox type="checkbox" name="restaurants" />
               <InputLabel htmlFor="Restaurants">Restaurants</InputLabel>
               {/* <br/> */}
             </FormLabel>
 
-            <FormLabel className="checkbox">
+            <FormLabel className="checkbox" sx={{display: 'flex', alignItems: 'center'}}>
               <Checkbox type="checkbox" name="movietheaters" />
               <InputLabel htmlFor="Cinema">Cinema</InputLabel>
               {/* <br/> */}
             </FormLabel>
 
-            <FormLabel className="checkbox">
+            <FormLabel className="checkbox" sx={{display: 'flex', alignItems: 'center'}}>
               <Checkbox type="checkbox" name="musicvenues" />
               <InputLabel htmlFor="Music Venues">Music Venues</InputLabel>
               {/* <br/> */}
             </FormLabel>
 
-            <FormLabel className="checkbox">
+            <FormLabel className="checkbox" sx={{display: 'flex', alignItems: 'center'}}>
               <Checkbox type="checkbox" name="shopping" />
               <InputLabel htmlFor="Shopping">Shopping</InputLabel>
               {/* <br/> */}

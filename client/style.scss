@@ -16,15 +16,14 @@ html, body {
   background-color: $white;
 }
 
-h1 {
+.h1 {
   color: $white;
   background-color: $black;
-  font-size: 48px;
-  text-align: center;
-  padding: 75px 50px;
+  padding: 60px 72px 64px;
 }
 
-h2 {
+.h2 {
+  font-size: larger;
   color: $white;
   background-color: $black;
   text-align: center;
@@ -42,52 +41,22 @@ p {
 }
 
 #nav {
-  width: 100%;
-  height: 75px;
-  color: $white;
-  background-color: $teal;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // position: fixed;
-  // box-shadow:  -2px 3px 3px 2px $shadow;
-  // z-index: 2;
+  background-color: $teal;
+  color: $white;
 }
 
 #logo {
-  margin-top: 4px;
-  margin-left: 40.2px;
-  width: auto;
-  height: 52.5px;
+  height: 48px;
 }
 
 #profile-icon {
-  margin-top: 4px;
-  margin-right: 32px;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  color: $white;
   background-color: $white;
-  // border: 1px solid $white;
-  // z-index: auto;
-  // box-shadow: -.5px 1.5px 2px 2px $shadow;
-}
-
-button {
-  z-index: auto;
-}
-
-button:hover {
-  cursor: pointer; 
- }
-
-a {
-   z-index: auto;
-}
-
-a:hover  {
-  cursor: pointer;
+  border-radius: 50%;
+  margin-top: 4px;
+  padding: 6px;
 }
 
 #main-container {
@@ -96,7 +65,7 @@ a:hover  {
 
 #aside {
    position: fixed;
-   margin-top: 75px;
+   margin-top: 60px;
    padding: 40px;
    height: 100%;
    background-color:#FFFCF5;
@@ -108,42 +77,6 @@ a:hover  {
   font-weight: 500;
   font-size: 1rem;
   margin-bottom: 10px;
-}
-
-input[type=text], select[name=radius] {
-  width: 90%;
-  padding: 12px 10px;
-  margin: 10px 0 20px;
-  border: 1px solid $black;
-  color: $black;
-  border-radius: 5px;
-  color: $black;
-  font-size: 14px;
-}
-
-select[name=radius] {
-  width: 97%;
-  padding: 11px 10px;
-  font-size: 14px;
-}
-
-input[type=checkbox]{
-  width: 30px;
-  height: 30px;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-
-.checkbox {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  // margin: 5px 0;
-
-  .checkbox label {
-    // padding-left: 5px;
-    font-size: 14px;
-  }
 }
 
 .checkboxes {
@@ -219,43 +152,19 @@ article {
   padding: 12px 20px 12px 22px;
 }
 
-.buttonContainer {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
-  vertical-align: middle;
-}
-
 .addFav {
   background-color: $teal;
-  color:$white;
-  border-radius: 5px;
-  border: 1px solid $teal;
-  width: 125px;
-  padding: 10px;
-  margin: 0 0 10px;
-  box-shadow: 0px 2px 2px $shadow;
+  color: $white;
 }
 
 .comment {
   background-color: $gold;
-  border: 1px solid $gold;
   color: $black;
-  border-radius: 5px;
-  width: 125px;
-  padding: 10px;
-  box-shadow: 0px 2px 2px $shadow;
 }
 
 .share {
   background-color: $gold;
-  border: 1px solid $gold;
   color: $black;
-  border-radius: 5px;
-  width: 125px;
-  padding: 10px;
-  margin: 10px 0 0;
-  box-shadow: 0px 2px 2px $shadow;
 }
 
 .name {
@@ -301,8 +210,6 @@ article {
 }
 
 .add-comment {
-  padding: 12px 0 0 1px;
-  margin: 0;
   color: $teal;
   align-self: flex-start;
   background: none;
@@ -313,194 +220,183 @@ article {
   color: $gold;
 }
 
-@media screen and (max-width: 1060px) and (min-width: 500px) {
-  #main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    width: 100%;
-    height: 100vh;
-  }
+// @media screen and (max-width: 1060px) and (min-width: 500px) {
+//   #main-container {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: start;
+//     width: 100%;
+//     height: 100vh;
+//   }
 
-  #results-container {
-    margin-left: 0;
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    padding: 40px 40px 40px 40px;
-  }
+//   #results-container {
+//     margin-left: 0;
+//     display: flex;
+//     flex-direction: column;
+//     width: auto;
+//     padding: 40px 40px 40px 40px;
+//   }
 
-  #splash {
-    margin-left: 0;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-  }
+//   #splash {
+//     margin-left: 0;
+//     display: flex;
+//     flex-direction: column;
+//     align-content: center;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 40px;
+//   }
 
-  aside {
-    position: relative;
-    padding: 40px 0;
-    width: 100%;
-    justify-content: center;
-  }
+//   aside {
+//     position: relative;
+//     padding: 40px 0;
+//     width: 100%;
+//     justify-content: center;
+//   }
 
-  aside > * {
-    padding: 0 40px;
-  }
+//   aside > * {
+//     padding: 0 40px;
+//   }
 
-  form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-      "left right"
-      "bottom right";
-    gap: 20px;
-  }
+//   form {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     grid-template-areas: 
+//       "left right"
+//       "bottom right";
+//     gap: 20px;
+//   }
 
-  .filters {
-    grid-area: right;
-  }
+//   .filters {
+//     grid-area: right;
+//   }
   
-  .checkboxes {
-    margin-top: 20px;
-  }
+//   .checkboxes {
+//     margin-top: 20px;
+//   }
  
-  .location-and-radius {
-    grid-area: left;
-  }
+//   .location-and-radius {
+//     grid-area: left;
+//   }
   
-  #search {
-    grid-area: bottom;
-    width: 97%;
-    padding: 0;
-    margin-top: -5px;
-  }
+//   #search {
+//     grid-area: bottom;
+//     width: 97%;
+//     padding: 0;
+//     margin-top: -5px;
+//   }
 
-  .side-header {
-    margin-top: 0;
-  }
+//   .side-header {
+//     margin-top: 0;
+//   }
 
- }
+//  }
 
-@media screen and (max-width: 500px) {
-  #main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-  }
+// @media screen and (max-width: 500px) {
+//   #main-container {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: start;
+//   }
 
-  #results-container {
-    margin-left: 0;
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    padding: 40px;
-  }
+//   #results-container {
+//     margin-left: 0;
+//     display: flex;
+//     flex-direction: column;
+//     width: auto;
+//     padding: 40px;
+//   }
 
-  #splash {
-    margin-left: 0;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-  }
+//   #splash {
+//     margin-left: 0;
+//     display: flex;
+//     flex-direction: column;
+//     align-content: center;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 40px;
+//   }
   
-  aside {
-    position: relative;
-    padding: 40px;
-    width: auto;
-    height: 100%;
-    justify-content: center;
-  }
+//   aside {
+//     position: relative;
+//     padding: 40px;
+//     width: auto;
+//     height: 100%;
+//     justify-content: center;
+//   }
 
-  aside > * {
-    padding: 0 20px;
-  }
+//   aside > * {
+//     padding: 0 20px;
+//   }
 
-  form {
-    display: block;
-  }
+//   form {
+//     display: block;
+//   }
 
-  #search {
-    margin-top: 30px;
-  }
+//   #search {
+//     margin-top: 30px;
+//   }
 
-  article {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin-bottom: 20px;
-    width: 100%;
-  }
+//   article {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: start;
+//     margin-bottom: 20px;
+//     width: 100%;
+//   }
 
-  .business {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-width: 300px;
-    box-shadow:  -2px 5px 5px 2px $shadow;
-  }
+//   .business {
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+//     min-width: 300px;
+//     box-shadow:  -2px 5px 5px 2px $shadow;
+//   }
   
-  .businessImg {
-    width: auto;
-    object-fit: cover;
-  }
+//   .businessImg {
+//     width: auto;
+//     object-fit: cover;
+//   }
   
-  .businessDetails {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // border: 1px solid $shadow;
-    // width: auto;
-    // height: auto;
-    // padding: 20px;
-    // box-shadow: 0px 2px 2px $shadow;
-  }
+//   .buttonContainer {
+//     display: flex;
+//     flex-direction: row;
+//     margin-left: 0;
+//     align-items: center;
+//     justify-content: center;
+//     min-width: 300px;
+//   }
   
-  .buttonContainer {
-    display: flex;
-    flex-direction: row;
-    margin-left: 0;
-    align-items: center;
-    justify-content: center;
-    min-width: 300px;
-  }
+//   .addFav {
+//     background-color: $teal;
+//     color:$white;
+//     border-radius: 5px;
+//     border: 1px solid $teal;
+//     width: 125px;
+//     padding: 10px;
+//     margin: 10px 5px;
+//     box-shadow: 0px 2px 2px $shadow;
+//   }
   
-  .addFav {
-    background-color: $teal;
-    color:$white;
-    border-radius: 5px;
-    border: 1px solid $teal;
-    width: 125px;
-    padding: 10px;
-    margin: 10px 5px;
-    box-shadow: 0px 2px 2px $shadow;
-  }
+//   .comment {
+//     background-color: $gold;
+//     border: 1px solid $gold;
+//     color: $black;
+//     border-radius: 5px;
+//     width: 125px;
+//     padding: 10px;
+//     margin: 10px 5px;
+//     box-shadow: 0px 2px 2px $shadow;
+//   }
   
-  .comment {
-    background-color: $gold;
-    border: 1px solid $gold;
-    color: $black;
-    border-radius: 5px;
-    width: 125px;
-    padding: 10px;
-    margin: 10px 5px;
-    box-shadow: 0px 2px 2px $shadow;
-  }
-  
-  .share {
-    background-color: $gold;
-    border: 1px solid $gold;
-    color: $black;
-    border-radius: 5px;
-    width: 125px;
-    padding: 10px;
-    margin: 10px 5px;
-    box-shadow: 0px 2px 2px $shadow;
-  }
-}
+//   .share {
+//     background-color: $gold;
+//     border: 1px solid $gold;
+//     color: $black;
+//     border-radius: 5px;
+//     width: 125px;
+//     padding: 10px;
+//     margin: 10px 5px;
+//     box-shadow: 0px 2px 2px $shadow;
+//   }
+// }

@@ -1,13 +1,14 @@
 import React from 'react';
 import Sidebar from './Sidebar.jsx';
 import ResultsContainer from './ResultsContainer.jsx';
+import { Paper } from '@mui/material';
 
 const MainContainer = () => {
     return (
-        <section id="main-container">
+        <Paper id="main-container">
             <Sidebar/>
             <ResultsContainer/>
-        </section>
+        </Paper>
     )
 }
 export default MainContainer;
