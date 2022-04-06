@@ -22,8 +22,7 @@ const ResultCard = (props) => {
         <Typography><span className="price">{props.price}</span><span>&#8226;</span><span className="rating">Rating: {props.rating}</span></Typography>
         <Typography className="Address">{props.address}</Typography>
         <Typography className="phone">{props.phone}</Typography>
-
-        <Button className="add-comment" sx={{color: teal, p: '4px 0 0'}}>Show Comments</Button>
+        {/* <Button className="add-comment" sx={{color: teal, p: '4px 0 0'}}>Show Comments</Button> */}
       </CardContent>
 
       <CardActions
@@ -34,10 +33,10 @@ const ResultCard = (props) => {
           variant="contained"
           sx={{backgroundColor: teal, color: white}}
           onClick={() => props.addFav(props.result)}>Favorite</Button>
-        <Button
+        {/* <Button
           variant="contained"
           sx={{backgroundColor: gold, color: black}}
-          onClick={props.addComment}>Comment</Button>
+          onClick={props.addComment}>Comment</Button> */}
         <CopyToClipboard text={props.url}>
           <Button
             variant="contained"
