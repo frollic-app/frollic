@@ -1,6 +1,6 @@
 import React from 'react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
+import { Button, ButtonGroup, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
 import { flexbox } from '@mui/system';
 
 const teal = '#22B3A6';
@@ -29,20 +29,22 @@ const ResultCard = (props) => {
         disableSpacing
         sx={{display: 'flex', flexDirection: 'column', alignItems: 'stretch'}}
       >
-        <Button
-          variant="contained"
-          sx={{backgroundColor: teal, color: white}}
-          onClick={() => props.addFav(props.result)}>Favorite</Button>
-        {/* <Button
-          variant="contained"
-          sx={{backgroundColor: gold, color: black}}
-          onClick={props.addComment}>Comment</Button> */}
-        <CopyToClipboard text={props.url}>
+        <ButtonGroup orientation="vertical">
           <Button
             variant="contained"
+            sx={{backgroundColor: teal, color: white}}
+            onClick={() => props.addFav(props.result)}>Favorite</Button>
+          {/* <Button
+            variant="contained"
             sx={{backgroundColor: gold, color: black}}
-            onClick={(e) => {e.target.innerText = 'Copied!'; setTimeout(() => {e.target.innerText = 'Share'}, 1000) }}>Share</Button>
-        </CopyToClipboard>
+            onClick={props.addComment}>Comment</Button> */}
+          <CopyToClipboard text={props.url}>
+            <Button
+              variant="contained"
+              sx={{backgroundColor: gold, color: black}}
+              onClick={(e) => {e.target.innerText = 'Copied!'; setTimeout(() => {e.target.innerText = 'Share'}, 1000) }}>Share</Button>
+          </CopyToClipboard>
+        </ButtonGroup>
       </CardActions>
     </Card>
   );

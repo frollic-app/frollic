@@ -39,7 +39,7 @@ const Sidebar = (props) => {
             {/* <br/> */}
           </FormGroup>
           
-          <FormGroup className="form-element">
+          <FormGroup className="form-element" sx={{mt: '10px'}}>
             <InputLabel
               htmlFor="radius"
               className="side-header"
@@ -56,7 +56,7 @@ const Sidebar = (props) => {
           </FormGroup>
         </FormGroup>
 
-        <FormGroup className="filters">
+        <FormGroup className="filters" sx={{mt: '10px'}}>
           <InputLabel className="side-header">
             What type of locations are you looking for?
           </InputLabel>
