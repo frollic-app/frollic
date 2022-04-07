@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import ResultCard from './ResultCard.jsx'
 import * as actions from '../actions/actions';
+import { Card, Paper, Typography } from '@mui/material';
 
 const mapStateToProps = (state) => ({
   searchResults: state.search.searchResults,
@@ -22,14 +23,19 @@ const ResultsContainer = (props) => {
   if (!props.searchResults.length && !props.firstRender) {
     return (
       <section id="splash">
-        <h2>Sorry, no results found matching your query. <br/>Try expanding your search radius.</h2>
+        <Typography className='h2'>
+          Sorry, no results found matching your query.
+          Try expanding your search radius.
+        </Typography>
       </section>
     )
   } else if (!props.searchResults.length) {
     return (
-      <section id="splash">
-        <h1>fun with frollic</h1>
-      </section>
+      <Card id="splash">
+        <Typography className='h1' sx={{fontSize: '36px', fontWeight: '700'}}>
+          fun with frollic
+        </Typography>
+      </Card>
     )
   }
 
@@ -51,10 +57,10 @@ const ResultsContainer = (props) => {
   });
   
   return (
-    <section id="results-container">
-      <h3 id="result-word">Results: </h3>
+    <Paper id="results-container">
+      <Typography id="result-word">Results: </Typography>
       {resultCards}
-    </section>
+    </Paper>
   );
 }
 
