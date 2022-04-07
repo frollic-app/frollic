@@ -1,6 +1,6 @@
 import React from 'react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import { Button, ButtonGroup, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
+import { Button, ButtonGroup, Card, CardActionArea, CardActions, CardContent, CardMedia, Tooltip, Typography } from '@mui/material';
 import { flexbox } from '@mui/system';
 
 const teal = '#22B3A6';
@@ -39,10 +39,12 @@ const ResultCard = (props) => {
             sx={{backgroundColor: gold, color: black}}
             onClick={props.addComment}>Comment</Button> */}
           <CopyToClipboard text={props.url}>
-            <Button
-              variant="contained"
-              sx={{backgroundColor: gold, color: black}}
-              onClick={(e) => {e.target.innerText = 'Copied!'; setTimeout(() => {e.target.innerText = 'Share'}, 1000) }}>Share</Button>
+            {/* <Tooltip title="Copy to clipboard"> */}
+              <Button
+                variant="contained"
+                sx={{backgroundColor: gold, color: black}}
+                onClick={(e) => {e.target.innerText = 'Copied!'; setTimeout(() => {e.target.innerText = 'Share'}, 1000) }}>Share</Button>
+            {/* </Tooltip> */}
           </CopyToClipboard>
         </ButtonGroup>
       </CardActions>
