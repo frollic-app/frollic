@@ -13,12 +13,11 @@ const mainReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case types.GET_RESULTS:
-
-    return {
-        ...state,
-        firstRender: false,
-        searchResults: action.payload,
-      }
+      return {
+          ...state,
+          firstRender: false,
+          searchResults: action.payload,
+        }
     case types.ADD_FAV:
       const newFavs = state.favorites.slice();
 

@@ -1,29 +1,54 @@
 import React from 'react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { Button, ButtonGroup, Card, CardActionArea, CardActions, CardContent, CardMedia, Tooltip, Typography } from '@mui/material';
+import { flexbox } from '@mui/system';
+
+const teal = '#22B3A6';
+const gold = '#f0c25f';
+const white = '#FFFCF5';
+const gray = '#D0D7DD';
+const black = '#2A343A';
+const shadow = 'rgb(42, 52, 58, .10)';
 
 const ResultCard = (props) => {
   
   return (
-    <article>
-      <div className="business">
-        <img className="businessImg"src={props.image}></img>
-        <div className="businessDetails">
-          <p className="distance">{props.distance}</p>
-          <p><a className="name" href={props.url}>{props.name}</a></p>
-          <p><span className="price">{props.price}</span><span>&#8226;</span><span className="rating">Rating: {props.rating}</span></p>
-          <p className="Address">{props.address}</p>
-          <p className="phone">{props.phone}</p>
-          <button className="add-comment">Show Comments</button>
-        </div>
-      </div>
-      <div className="buttonContainer">
-        <button className="addFav" onClick={() => props.addFav(props.result)}>Favorite</button>
-        <button className="comment" onClick={props.addComment}>Comment</button>
-        <CopyToClipboard text={props.url}>
-          <button className="share" onClick={(e) => {e.target.innerText = 'Copied!'; setTimeout(() => {e.target.innerText = 'Share'}, 1000) }}>Share</button>
-        </CopyToClipboard>
-      </div>
-    </article>
+    <Card className="card" sx={{display: 'flex', mb: '5px'}}>
+      <CardMedia className="businessImg" component="img" sx={{ width: 200 }} image={props.image}></CardMedia>
+
+      <CardContent className="businessDetails">
+        <Typography className="distance">{props.distance}</Typography>
+        <Typography><a className="name" href={props.url}>{props.name}</a></Typography>
+        <Typography><span className="price">{props.price}</span><span>&#8226;</span><span className="rating">Rating: {props.rating}</span></Typography>
+        <Typography className="Address">{props.address}</Typography>
+        <Typography className="phone">{props.phone}</Typography>
+        {/* <Button className="add-comment" sx={{color: teal, p: '4px 0 0'}}>Show Comments</Button> */}
+      </CardContent>
+
+      <CardActions
+        disableSpacing
+        sx={{display: 'flex', flexDirection: 'column', alignItems: 'stretch'}}
+      >
+        <ButtonGroup orientation="vertical">
+          <Button
+            variant="contained"
+            sx={{backgroundColor: teal, color: white}}
+            onClick={() => props.addFav(props.result)}>Favorite</Button>
+          {/* <Button
+            variant="contained"
+            sx={{backgroundColor: gold, color: black}}
+            onClick={props.addComment}>Comment</Button> */}
+          <CopyToClipboard text={props.url}>
+            {/* <Tooltip title="Copy to clipboard"> */}
+              <Button
+                variant="contained"
+                sx={{backgroundColor: gold, color: black}}
+                onClick={(e) => {e.target.innerText = 'Copied!'; setTimeout(() => {e.target.innerText = 'Share'}, 1000) }}>Share</Button>
+            {/* </Tooltip> */}
+          </CopyToClipboard>
+        </ButtonGroup>
+      </CardActions>
+    </Card>
   );
 }
 
